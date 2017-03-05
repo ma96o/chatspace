@@ -6,7 +6,22 @@ Rails 5.0.1
 
 ---
 
-# DATABASE
+## ASSOCIATION
+
+# User  
+  has_many :messages, ->{ order("created_at DESC") }
+  has_many :groups, through: :users_groups
+
+
+# Groups  
+  has_many :messages, ->{ order("created_at DESC") }, dependent: :delete_all
+  has_many :users, through: :users_groups
+
+
+# Messages
+  belongs_to :messagable, polymorphic: true
+
+## DATABASE
 
 ### Users
 | column   | type    | NULL | default value | information   |
@@ -18,7 +33,7 @@ Rails 5.0.1
 | column          | type    | NULL | default value | information                       |
 |:----------------|:--------|:-----|:--------------|:----------------------------------|
 | id              | integer | NO   |               | 主キー                             |
-| user_id         | integer | NO   |               | 投稿したユーザのID                   |
+| user_id         | integer | NO   |               | 投稿したユーザのID (外部キー)         |
 | messagable_type | string  | NO   |               | Group or User (index)              |
 | messagable_id   | integer | NO   |               | 送り先のuser_id or group_id (index) |
 | text            | text    |      |               | 内容                               |
