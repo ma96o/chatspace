@@ -9,22 +9,27 @@ Rails 5.0.1
 ## ASSOCIATION
 
 ### User  
-  has_many :messages, as: :messageable, ->{ order("created_at DESC") }  
-  has_many :groups, through: :users_groups
-
+```
+      has_many :messages, as: :messageable, ->{ order("created_at DESC") }  
+      has_many :groups, through: :users_groups
+```
 
 ### Group  
-  has_many :messages, as:messageable, dependent: :delete_all, ->{ order("created_at DESC") }  
-  has_many :users, through: :users_groups
-
+```
+      has_many :messages, as:messageable, dependent: :delete_all, ->{ order("created_at DESC") }  
+      has_many :users, through: :users_groups
+```
 
 ### Message  
-  belongs_to :messagable, polymorphic: true
+```
+      belongs_to :messagable, polymorphic: true
+```
 
 ### UsersGroup  
+```
   belongs_to :user  
   belongs_to :group
-
+```
 ---
 
 ## DATABASE
