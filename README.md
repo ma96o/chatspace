@@ -2,19 +2,19 @@
 
 ---
 
-| Users                  ||||
+# Users
 |:---|:-----|:------|:---------|
 | id | name | email | password |
 
 
-| massages                                               |||||
+# Massages
 |:---|:-------------|:----------------|:--------------|:-----|
 | id | send_user_id | messagable_type | messagable_id | text |
 
-| UsersGroups                   ||||
+# UsersGroups
 |:---|:--------|:---------|:-------|
 | id | user_id | group_id | status |
 
-| Groups   ||
+# Groups
 |:---|:-----|
 | id | name |
