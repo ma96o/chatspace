@@ -1,20 +1,16 @@
-### DATABASE
+# DATABASE
 
 ---
 
-# Users
-|:---|:-----|:------|:---------|
+### Users
 | id | name | email | password |
 
 
-# Massages
-|:---|:-------------|:----------------|:--------------|:-----|
+### Massages
 | id | send_user_id | messagable_type | messagable_id | text |
 
-# UsersGroups
-|:---|:--------|:---------|:-------|
+### UsersGroups
 | id | user_id | group_id | status |
 
-# Groups
-|:---|:-----|
+### Groups
 | id | name |
