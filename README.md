@@ -1,6 +1,12 @@
-# DATABASE
+# ChatSpace
+
+Ruby 2.2.3
+
+Rails 5.0.1
 
 ---
+
+# DATABASE
 
 ### Users
 | column   | type    | NULL | default value | information   |
