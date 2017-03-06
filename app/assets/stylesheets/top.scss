@@ -1,3 +1,75 @@
-// Place all the styles related to the top controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body,html {
+  height: 100%;
+}
+
+body {
+}
+
+.contents {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+  .side-bar {
+    height: 100%;
+    background-color: #2f3e51;
+    width: 260px;
+    padding: 0 20px;
+    float: left;
+    ul.chats {
+
+    }
+
+    li {
+      .selected {
+        background-color: #253141;
+      }
+      .chats__lists {
+
+      }
+    }
+  }
+
+  .main-content {
+    height: 100%;
+    width: 100%;
+    margin-left: -300px;
+    padding-left: 300px;
+    float: right;
+    box-sizing: border-box;
+    .chat-space {
+        height: 100%;
+        position: relative;
+
+      .header {
+        height: 95px;
+        background-color: #FFFFFF;
+        border-bottom: ridge 1px #eeeeee;
+        padding: 0 40px;
+      }
+      .chat {
+        width: 100%;
+        background-color: #F8F8F8;
+        position: absolute;
+        padding: 0 40px;
+        top: 96px;
+        bottom: 90px;
+      }
+      .putting-message {
+        height: 90px;
+        width: 100%;
+        background-color: #AAAAAA;
+        position: absolute;
+        padding: 0 40px;
+        bottom: 0px;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
