@@ -81,6 +81,40 @@ body {
         background-color: #FFFFFF;
         border-bottom: ridge 1px #eeeeee;
         padding: 0 40px;
+        .header__info {
+          height: 100%;
+          width: 50%;
+          float: left;
+          .header__info--name {
+            padding: 30px 0 10px 0;
+            font-size: 20px;
+            color: #333333;
+          }
+          .header__info--members {
+            font-size: 12px;
+            color: #999999;
+            a {
+              color: #38AEF0;
+            }
+          }
+        }
+        .header__buttons {
+          height: 100%;
+          width: 50%;
+          float: right;
+          ul {
+            .header__buttons--list {
+              height: 32px;
+              margin: 28px 0 0 2px;
+              padding: 8px 20px 0 20px;
+              float: right;
+              border: solid 1px #38AEF0;
+              text-align: center;
+              font-size: 15px;
+              color: #38AEF0;
+            }
+          }
+        }
       }
       .chat {
         width: 100%;
@@ -96,6 +130,7 @@ body {
         background-color: #AAAAAA;
         position: absolute;
         padding: 0 40px;
+        margin-left: -1px;
         bottom: 0px;
       }
     }
