@@ -1,8 +1,27 @@
 %div.contents
   %div.side-bar
+    %div.header
+      %p<
+        sample太郎
+        %span.icon
+          = icon "pencil-square-o"
+          = icon "cog"
     %ul.chats
-      %li.chats__list#selected
-      %li.chats__lists
+      %li.chats__list#selected<
+        %p.chats__list--name<
+          sample1
+        %p.chats__list--message<
+          hogehoge1
+      %li.chats__list<
+        %p.chats__list--name<
+          sample2
+        %p.chats__list--message<
+          hogehoge2
+      %li.chats__list<
+        %p.chats__list--name<
+          sample3
+        %p.chats__list--message<
+          hogehoge3
   %div.main-content
     %div.chat-space
       %div.header

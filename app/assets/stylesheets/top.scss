@@ -13,15 +13,50 @@ body {
   .side-bar {
     height: 100%;
     background-color: #2f3e51;
-    width: 260px;
-    padding: 0 20px;
+    width: 300px;
     float: left;
-    ul.chats {
+    border-right: solid 1px #eeeeee;
+    box-sizing:border-box;
+    .header {
+      height: 96px;
+      width: 100%;
+      background-color: #253141;
+      p {
+        padding: 35px 20px 0 20px;
+        font-family: Bold;
+        font-size: 16px;
+        color: #FFFFFF;
+        .icon {
+          float: right;
+        }
+      }
 
+    }
+    ul.chats {
+      .chats__list {
+        height: 91px;
+        width: 100%;
+        border-bottom: ridge 1px #253141;
+        .chats__list--name {
+          font-size: 15px;
+          color: #FFFFFF;
+          padding: 20px 20px 5px 20px;
+
+        }
+        .chats__list--message {
+          font-size: 11px;
+          color: #FFFFFF;
+          padding: 0 20px 40px 20px;
+        }
+      }
+      #selected {
+        border-right: solid 5px #FFFFFF;
+        box-sizing:border-box;
+      }
     }
 
     li {
-      .selected {
+      #selected {
         background-color: #253141;
       }
       .chats__lists {
