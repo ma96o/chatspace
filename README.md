@@ -34,7 +34,8 @@ Rails 5.0.1
 
 ## DATABASE
 
-### Users (created by devise)
+### Users
+(created by devise)  
 | column   | type    | NULL | default value | information   |
 |:---------|:--------|:-----|:--------------|:--------------|
 | id       | integer | FALSE|               | 主キー         |
