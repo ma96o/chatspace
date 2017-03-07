@@ -1,6 +1,6 @@
 # ChatSpace
 
-Ruby 2.2.3
+Ruby 2.3.1
 
 Rails 5.0.1
 
@@ -10,13 +10,13 @@ Rails 5.0.1
 
 ### User  
 ```
-  has_many :messages, as: :messageable, ->{ order("created_at DESC") }  
+  has_many :messages, as: :messageable  
   has_many :groups, through: :users_groups
 ```
 
 ### Group  
 ```
-  has_many :messages, as:messageable, dependent: :delete_all, ->{ order("created_at DESC") }  
+  has_many :messages, as:messageable, dependent: :delete_all  
   has_many :users, through: :users_groups
 ```
 
@@ -35,10 +35,12 @@ Rails 5.0.1
 ## DATABASE
 
 ### Users
+(created by devise & CarrierWave)
+
 | column   | type    | NULL | default value | information   |
 |:---------|:--------|:-----|:--------------|:--------------|
-| id       | integer | FALSE|               | 主キー        |
-| avatar   | string  |      |               | PF画像        |
+| id       | integer | FALSE|               | 主キー         |
+| name     | string  | FALSE|               | ユーザ名       |
 
 ### Massages
 | column          | type    | NULL | default value | information                       |
