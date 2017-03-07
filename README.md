@@ -16,7 +16,7 @@ Rails 5.0.1
 
 ### Group  
 ```
-  has_many :messages, as:messageable, dependent: :delete_all, ->{ order("created_at DESC") }  
+  has_many :messages, as:messageable, dependent: :delete_all  
   has_many :users, through: :users_groups
 ```
 
@@ -35,13 +35,12 @@ Rails 5.0.1
 ## DATABASE
 
 ### Users
-(created by devise)
+(created by devise & CarrierWave)
 
 | column   | type    | NULL | default value | information   |
 |:---------|:--------|:-----|:--------------|:--------------|
 | id       | integer | FALSE|               | 主キー         |
 | name     | string  | FALSE|               | ユーザ名       |
-| avatar   | string  |      |               | PF画像         |
 
 ### Massages
 | column          | type    | NULL | default value | information                       |
