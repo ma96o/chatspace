@@ -10,7 +10,7 @@ Rails 5.0.1
 
 ### User  
 ```
-  has_many :messages, as: :messageable, ->{ order("created_at DESC") }  
+  has_many :messages, as: :messageable  
   has_many :groups, through: :users_groups
 ```
 
