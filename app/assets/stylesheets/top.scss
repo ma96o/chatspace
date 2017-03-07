@@ -6,9 +6,8 @@ body {
 }
 
 .contents {
-  height: 100%;
   width: 100%;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
   .side-bar {
     height: 100%;
@@ -17,6 +16,7 @@ body {
     float: left;
     border-right: solid 1px #eeeeee;
     box-sizing:border-box;
+    position: fixed;
     .header {
       height: 96px;
       width: 100%;
@@ -73,14 +73,18 @@ body {
     float: right;
     box-sizing: border-box;
     .chat-space {
-        height: 100%;
-        position: relative;
-
+      position: relative;
+      width: 100%;
       .header {
         height: 95px;
+        box-sizing: border-box;
         background-color: #FFFFFF;
         border-bottom: ridge 1px #eeeeee;
         padding: 0 40px;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        left: 300px;
         .header__info {
           height: 100%;
           width: 50%;
@@ -117,10 +121,9 @@ body {
         }
       }
       .chat {
-        height: 100%;
         background-color: #F8F8F8;
-        padding: 26px 40px 0 40px;
-/*        position: absolute;
+        padding: 121px 40px 89px 40px;
+/*        position: fixed;
         top: 96px;
         bottom: 90px;*/
         ul {
@@ -152,13 +155,14 @@ body {
       }
       .putting-message {
         height: 90px;
-        width: 100%;
         box-sizing:border-box;
         background-color: #AAAAAA;
-        position: absolute;
+        position: fixed;
         padding: 0 40px;
         margin-left: -1px;
         bottom: 0px;
+        right: 0px;
+        left: 300px;
         .putting-message__form {
           height: 100%;
           width: 100%;
