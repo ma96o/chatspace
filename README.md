@@ -1,6 +1,6 @@
 # ChatSpace
 
-Ruby 2.2.3
+Ruby 2.3.1
 
 Rails 5.0.1
 
@@ -34,11 +34,12 @@ Rails 5.0.1
 
 ## DATABASE
 
-### Users
+### Users (created by devise)
 | column   | type    | NULL | default value | information   |
 |:---------|:--------|:-----|:--------------|:--------------|
-| id       | integer | FALSE|               | 主キー        |
-| avatar   | string  |      |               | PF画像        |
+| id       | integer | FALSE|               | 主キー         |
+| name     | string  | FALSE|               | ユーザ名       |
+| avatar   | string  |      |               | PF画像         |
 
 ### Massages
 | column          | type    | NULL | default value | information                       |
