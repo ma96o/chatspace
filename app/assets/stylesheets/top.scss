@@ -1,66 +1,72 @@
+$white: #FFFFFF;
+$gray_border: #eeeeee;
+$gray_chat: #F8F8F8;
+$gray_puttingMessage: #AAAAAA;
+$gray_text: #434A54;
+$light-gray: #999999;
+$deep-gray: #333333;
+$indigo_sidebar: #2f3e51;
+$deep-indigo: #253141;
+$vivid-blue: #38AEF0;
+
+
 body,html {
   height: 100%;
 }
 
-body {
-}
-
 .contents {
   width: 100%;
-  /*overflow: hidden;*/
 }
+
   .side-bar {
     height: 100%;
-    background-color: #2f3e51;
+    background-color: $indigo_sidebar;
     width: 300px;
     float: left;
-    border-right: solid 1px #eeeeee;
+    border-right: solid 1px $gray_border;
     box-sizing:border-box;
     position: fixed;
+
     .header {
       height: 96px;
       width: 100%;
-      background-color: #253141;
+      background-color: $deep-indigo;
+
       p {
-        padding: 35px 20px 0 20px;
+        padding: 35px 20px 0;
         font-family: Bold;
         font-size: 16px;
-        color: #FFFFFF;
+        color: $white;
+
         .icon {
           float: right;
         }
       }
-
     }
+
     ul.chats {
+
       .chats__list {
         height: 91px;
         width: 100%;
-        border-bottom: ridge 1px #253141;
+        border-bottom: ridge 1px $deep-indigo;
+
         .chats__list--name {
           font-size: 15px;
-          color: #FFFFFF;
-          padding: 20px 20px 5px 20px;
-
+          color: $white;
+          padding: 20px 20px 5px;
         }
+
         .chats__list--message {
           font-size: 11px;
-          color: #FFFFFF;
-          padding: 0 20px 40px 20px;
+          color: $white;
+          padding: 0 20px 40px;
         }
       }
+
       #selected {
-        border-right: solid 5px #FFFFFF;
+        border-right: solid 5px $white;
         box-sizing:border-box;
-      }
-    }
-
-    li {
-      #selected {
-        background-color: #253141;
-      }
-      .chats__lists {
-
       }
     }
   }
@@ -72,102 +78,117 @@ body {
     padding-left: 300px;
     float: right;
     box-sizing: border-box;
+
     .chat-space {
       position: relative;
       width: 100%;
+
       .header {
         height: 95px;
         box-sizing: border-box;
-        background-color: #FFFFFF;
-        border-bottom: ridge 1px #eeeeee;
+        background-color: $white;
+        border-bottom: ridge 1px $gray_border;
         padding: 0 40px;
         position: fixed;
         top: 0px;
         right: 0px;
         left: 300px;
+
         .header__info {
           height: 100%;
           width: 50%;
           float: left;
+
           .header__info--name {
-            padding: 30px 0 10px 0;
+            padding: 30px 0 10px;
             font-size: 20px;
-            color: #333333;
+            color: $deep-gray;
           }
+
           .header__info--members {
             font-size: 12px;
-            color: #999999;
+            color: $light-gray;
+
             a {
-              color: #38AEF0;
+              color: $vivid-blue;
             }
           }
         }
+
         .header__buttons {
           height: 100%;
           width: 50%;
           float: right;
+
           ul {
             .header__buttons--list {
               height: 32px;
               margin: 28px 0 0 2px;
-              padding: 8px 20px 0 20px;
+              padding: 8px 20px 0;
               float: right;
-              border: solid 1px #38AEF0;
+              border: solid 1px $vivid-blue;
               text-align: center;
               font-size: 15px;
-              color: #38AEF0;
+              color: $vivid-blue;
             }
           }
         }
       }
+
       .chat {
-        background-color: #F8F8F8;
-        padding: 121px 40px 89px 40px;
-/*        position: fixed;
-        top: 96px;
-        bottom: 90px;*/
+        background-color: $gray_chat;
+        padding: 121px 40px 89px;
+
         ul {
           height: 100%;
           width: 50%;
+
           .chat__message {
             height: 54px;
             width: 100%;
             padding: 10px 0;
-            border-bottom: solid 1px #AAAAAA;
+            border-bottom: solid 1px $gray_puttingMessage;
+
             .chat__message--name {
               font-size: 16px;
-              color: #434A54;
+              color: $gray_text;
+
               span {
                 margin-left: 10px;
                 font-size: 12px;
-                color: #999999;
+                color: $light-gray;
               }
             }
+
             .chat__message--text {
               margin-top: 10px;
               font-size: 14px;
+              color: $deep-gray;
             }
           }
           .my-message {
-
+            /*自分のメッセージをデザインしたいのですが思索中です*/
           }
         }
       }
+
       .putting-message {
         height: 90px;
         box-sizing:border-box;
-        background-color: #AAAAAA;
+        background-color: $gray_puttingMessage;
         position: fixed;
         padding: 0 40px;
         margin-left: -1px;
         bottom: 0px;
         right: 0px;
         left: 300px;
+
         .putting-message__form {
           height: 100%;
           width: 100%;
-          padding: 20px 0 20px 0;
+          padding: 20px 0;
           box-sizing:border-box;
+
           .putting-message__form--text {
             height: 50px;
             width: 100%;
@@ -178,29 +199,22 @@ body {
             float: left;
             border: none;
             font-size: 16px;
-            color: #434A54;
+            color: $gray_text;
           }
+
           .putting-message__form--button {
             height: 50px;
             width: 82px;
             padding: 0 20px;
             margin-left: 15px;
             float: right;
-            border: solid 1px #38AEF0;
-            background-color: #38AEF0;
+            border: solid 1px $vivid-blue;
+            background-color: $vivid-blue;
             text-align: center;
             font-size: 15px;
-            color: #FFFFFF;
+            color: $white;
           }
         }
       }
     }
   }
-
-
-
-
-
-
-
-

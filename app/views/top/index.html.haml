@@ -1,6 +1,6 @@
-%div.contents
-  %div.side-bar
-    %div.header
+.contents
+  .side-bar
+    .header
       %p<
         sample太郎
         %span.icon
@@ -22,22 +22,22 @@
           sample3
         %p.chats__list--message<
           hogehoge3
-  %div.main-content
-    %div.chat-space
-      %div.header
-        %div.header__info
+  .main-content
+    .chat-space
+      .header
+        .header__info
           %p.header__info--name<
             sample1
           %p.header__info--members<
             Members: sample太郎,sample花子 ..
             %a
               = icon "plus-circle"
-        %div.header__buttons<
+        .header__buttons<
           %ul
             %li.header__buttons--list<
               Edit
 
-      %div.chat
+      .chat
         %ul
           %li.chat__message
             %p.chat__message--name<
@@ -95,7 +95,7 @@
                 2017/02/07 06:28:33
             %p.chat__message--text<
               おい
-      %div.putting-message
+      .putting-message
         %form.putting-message__form
           %input.putting-message__form--text{type: :text, placeholder: "type a message"}
           %input.putting-message__form--button{type: :submit, value: "Send"}
