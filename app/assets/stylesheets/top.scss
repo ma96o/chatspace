@@ -107,17 +107,15 @@ body,html {
           width: 50%;
           float: right;
 
-          ul {
-            &__list {
-              height: 32px;
-              margin: 28px 0 0 2px;
-              padding: 8px 20px 0;
-              float: right;
-              border: solid 1px $vivid-blue;
-              text-align: center;
-              font-size: 15px;
-              color: $vivid-blue;
-            }
+          &__list {
+            height: 32px;
+            margin: 28px 0 0 2px;
+            padding: 8px 20px 0;
+            float: right;
+            border: solid 1px $vivid-blue;
+            text-align: center;
+            font-size: 15px;
+            color: $vivid-blue;
           }
         }
       }
