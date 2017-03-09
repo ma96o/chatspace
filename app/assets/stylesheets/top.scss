@@ -137,7 +137,7 @@ body,html {
             height: 54px;
             width: 100%;
             padding: 10px 0;
-            border-bottom: solid 1px $gray_puttingMessage;
+            border-bottom: solid 1px $gray_formWrapper;
 
             &__name {
               font-size: 16px;
@@ -165,7 +165,7 @@ body,html {
       .form-wrapper {
         height: 90px;
         box-sizing: border-box;
-        background-color: $gray_puttingMessage;
+        background-color: $gray_formWrapper;
         position: fixed;
         padding: 0 40px;
         margin-left: -1px;
