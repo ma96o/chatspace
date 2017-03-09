@@ -14,7 +14,7 @@ body,html {
     width: 300px;
     float: left;
     border-right: solid 1px $gray_border;
-    box-sizing:border-box;
+    box-sizing: border-box;
     position: fixed;
 
     .header {
@@ -56,7 +56,7 @@ body,html {
 
       #selected {
         border-right: solid 5px $white;
-        box-sizing:border-box;
+        box-sizing: border-box;
       }
     }
   }
@@ -164,7 +164,7 @@ body,html {
 
       .putting-message {
         height: 90px;
-        box-sizing:border-box;
+        box-sizing: border-box;
         background-color: $gray_puttingMessage;
         position: fixed;
         padding: 0 40px;
@@ -177,7 +177,7 @@ body,html {
           height: 100%;
           width: 100%;
           padding: 20px 0;
-          box-sizing:border-box;
+          box-sizing: border-box;
 
           .putting-message__form--text {
             height: 50px;
@@ -185,7 +185,7 @@ body,html {
             margin-right: -97px;
             padding-right: 97px;
             padding-left: 10px;
-            box-sizing:border-box;
+            box-sizing: border-box;
             float: left;
             border: none;
             font-size: 16px;
@@ -198,7 +198,7 @@ body,html {
             padding: 0 20px;
             margin-left: 15px;
             float: right;
-            border: solid 1px $vivid-blue;
+            border: none;
             background-color: $vivid-blue;
             text-align: center;
             font-size: 15px;
