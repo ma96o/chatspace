@@ -1,3 +1,5 @@
+@import "colors";
+
 body,html {
   height: 100%;
 }
@@ -32,20 +34,20 @@ body,html {
       }
     }
 
-    ul.chats {
+    .chats {
 
-      .chats__list {
+      &__list {
         height: 91px;
         width: 100%;
         border-bottom: ridge 1px $deep-indigo;
 
-        .chats__list--name {
+        &--name {
           font-size: 15px;
           color: $white;
           padding: 20px 20px 5px;
         }
 
-        .chats__list--message {
+        &--message {
           font-size: 11px;
           color: $white;
           padding: 0 20px 40px;
@@ -87,13 +89,13 @@ body,html {
           width: 50%;
           float: left;
 
-          .info__name {
+          &__name {
             padding: 30px 0 10px;
             font-size: 20px;
             color: $deep-gray;
           }
 
-          .info__members {
+          &__members {
             font-size: 12px;
             color: $light-gray;
 
@@ -109,7 +111,7 @@ body,html {
           float: right;
 
           ul {
-            .buttons__list {
+            &__list {
               height: 32px;
               margin: 28px 0 0 2px;
               padding: 8px 20px 0;
@@ -137,7 +139,7 @@ body,html {
             padding: 10px 0;
             border-bottom: solid 1px $gray_puttingMessage;
 
-            .message__name {
+            &__name {
               font-size: 16px;
               color: $gray_text;
 
@@ -148,7 +150,7 @@ body,html {
               }
             }
 
-            .message__text {
+            &__text {
               margin-top: 10px;
               font-size: 14px;
               color: $deep-gray;
