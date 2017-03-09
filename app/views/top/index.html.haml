@@ -1,5 +1,5 @@
-.contents
-  .side-bar
+#wrapper
+  #side-bar
     .header
       %p<
         sample太郎
@@ -22,80 +22,80 @@
           sample3
         %p.chats__list--message<
           hogehoge3
-  .main-content
-    .chat-space
+  #main
+    .contents
       .header
-        .header__info
-          %p.header__info--name<
+        .info
+          %p.info__name<
             sample1
-          %p.header__info--members<
+          %p.info__members<
             Members: sample太郎,sample花子 ..
             %a
               = icon "plus-circle"
-        .header__buttons<
+        .buttons<
           %ul
-            %li.header__buttons--list<
+            %li.buttons__list<
               Edit
 
-      .chat
+      .container
         %ul
-          %li.chat__message
-            %p.chat__message--name<
+          %li.message
+            %p.message__name<
               sample花子
               %span<
                 2017/02/07 06:27:02
-            %p.chat__message--text<
+            %p.message__text<
               hogehogeなう
-          %li.chat__message.my-message
-            %p.chat__message--name<
+          %li.message.my-message
+            %p.message__name<
               sample太郎
               %span<
                 2017/02/07 06:27:34
-            %p.chat__message--text<
+            %p.message__text<
               hoge~~~~~
-          %li.chat__message
-            %p.chat__message--name<
+          %li.message
+            %p.message__name<
               sample花子
               %span<
                 2017/02/07 06:27:56
-            %p.chat__message--text<
+            %p.message__text<
               おらおら
-          %li.chat__message
-            %p.chat__message--name<
+          %li.message
+            %p.message__name<
               sample花子
               %span<
                 2017/02/07 06:28:33
-            %p.chat__message--text<
+            %p.message__text<
               おい
-          %li.chat__message
-            %p.chat__message--name<
+          %li.message
+            %p.message__name<
               sample花子
               %span<
                 2017/02/07 06:27:02
-            %p.chat__message--text<
+            %p.message__text<
               hogehogeなう
-          %li.chat__message.my-message
-            %p.chat__message--name<
+          %li.message.my-message
+            %p.message__name<
               sample太郎
               %span<
                 2017/02/07 06:27:34
-            %p.chat__message--text<
+            %p.message__text<
               hoge~~~~~
-          %li.chat__message
-            %p.chat__message--name<
+          %li.message
+            %p.message__name<
               sample花子
               %span<
                 2017/02/07 06:27:56
-            %p.chat__message--text<
+            %p.message__text<
               おらおら
-          %li.chat__message
-            %p.chat__message--name<
+          %li.message
+            %p.message__name<
               sample花子
               %span<
                 2017/02/07 06:28:33
-            %p.chat__message--text<
+            %p.message__text<
               おい
-      .putting-message
-        %form.putting-message__form
-          %input.putting-message__form--text{type: :text, placeholder: "type a message"}
-          %input.putting-message__form--button{type: :submit, value: "Send"}
+      .form-wrapper
+        %form
+          %input.text{type: :text, placeholder: "type a message"}
+          %input.button{type: :submit, value: "Send"}
