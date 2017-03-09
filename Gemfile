@@ -48,3 +48,5 @@ end
 gem 'haml-rails', '~> 0.9'
 gem 'erb2haml'
 gem 'font-awesome-sass', '~> 4.7.0'
+
+gem 'devise'
