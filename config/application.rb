@@ -21,7 +21,6 @@ module ChatSpace
                       fixture: true,
                       fixture_replacement: :factory_girl,
                       routing_specs: false,
-                      integration_tool: false
     end
   end
 end
