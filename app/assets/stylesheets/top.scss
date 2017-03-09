@@ -1,0 +1,208 @@
+body,html {
+  height: 100%;
+}
+
+#wrapper {
+  width: 100%;
+
+  #side-bar {
+    height: 100%;
+    background-color: $indigo_sidebar;
+    width: 300px;
+    float: left;
+    border-right: solid 1px $gray_border;
+    box-sizing: border-box;
+    position: fixed;
+
+    .header {
+      height: 96px;
+      width: 100%;
+      background-color: $deep-indigo;
+
+      p {
+        padding: 35px 20px 0;
+        font-family: Bold;
+        font-size: 16px;
+        color: $white;
+
+        .icon {
+          float: right;
+        }
+      }
+    }
+
+    .chats {
+
+      &__list {
+        height: 91px;
+        width: 100%;
+        border-bottom: ridge 1px $deep-indigo;
+
+        &--name {
+          font-size: 15px;
+          color: $white;
+          padding: 20px 20px 5px;
+        }
+
+        &--message {
+          font-size: 11px;
+          color: $white;
+          padding: 0 20px 40px;
+        }
+      }
+
+      #selected {
+        border-right: solid 5px $white;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  #main {
+    height: 100%;
+    width: 100%;
+    margin-left: -300px;
+    padding-left: 300px;
+    float: right;
+    box-sizing: border-box;
+
+    .contents {
+      position: relative;
+      width: 100%;
+
+      .header {
+        height: 95px;
+        box-sizing: border-box;
+        background-color: $white;
+        border-bottom: ridge 1px $gray_border;
+        padding: 0 40px;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        left: 300px;
+
+        .info {
+          height: 100%;
+          width: 50%;
+          float: left;
+
+          &__name {
+            padding: 30px 0 10px;
+            font-size: 20px;
+            color: $deep-gray;
+          }
+
+          &__members {
+            font-size: 12px;
+            color: $light-gray;
+
+            a {
+              color: $vivid-blue;
+            }
+          }
+        }
+
+        .buttons {
+          height: 100%;
+          width: 50%;
+          float: right;
+
+          ul {
+            &__list {
+              height: 32px;
+              margin: 28px 0 0 2px;
+              padding: 8px 20px 0;
+              float: right;
+              border: solid 1px $vivid-blue;
+              text-align: center;
+              font-size: 15px;
+              color: $vivid-blue;
+            }
+          }
+        }
+      }
+
+      .container {
+        background-color: $gray_chat;
+        padding: 121px 40px 89px;
+
+        ul {
+          height: 100%;
+          width: 50%;
+
+          .message {
+            height: 54px;
+            width: 100%;
+            padding: 10px 0;
+            border-bottom: solid 1px $gray_formWrapper;
+
+            &__name {
+              font-size: 16px;
+              color: $gray_text;
+
+              span {
+                margin-left: 10px;
+                font-size: 12px;
+                color: $light-gray;
+              }
+            }
+
+            &__text {
+              margin-top: 10px;
+              font-size: 14px;
+              color: $deep-gray;
+            }
+          }
+          .my-message {
+            /*自分のメッセージをデザインしたいのですが思索中です*/
+          }
+        }
+      }
+
+      .form-wrapper {
+        height: 90px;
+        box-sizing: border-box;
+        background-color: $gray_formWrapper;
+        position: fixed;
+        padding: 0 40px;
+        margin-left: -1px;
+        bottom: 0px;
+        right: 0px;
+        left: 300px;
+
+        form {
+          height: 100%;
+          width: 100%;
+          padding: 20px 0;
+          box-sizing: border-box;
+
+          .text {
+            height: 50px;
+            width: 100%;
+            margin-right: -97px;
+            padding-right: 97px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            float: left;
+            border: none;
+            font-size: 16px;
+            color: $gray_text;
+          }
+
+          .button {
+            height: 50px;
+            width: 82px;
+            padding: 0 20px;
+            margin-left: 15px;
+            float: right;
+            border: none;
+            background-color: $vivid-blue;
+            text-align: center;
+            font-size: 15px;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
