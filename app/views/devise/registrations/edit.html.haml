@@ -1,0 +1,8 @@
+#account-page.account-page
+  .account-page__inner.clearfix
+    .account-page__inner--left.account-page__header
+      %h2 Edit Account
+      %h5 アカウントの編集
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+      = link_to "トップページに戻る", :back, class: 'btn'
+      = render "form"
