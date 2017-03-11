@@ -26,9 +26,11 @@ body,html {
         color: $white;
 
         .icons {
-          float: right;
-          i {
+
+          .icon {
+            float: right;
             color: $white;
+            padding: 0 2px;
           }
         }
       }
