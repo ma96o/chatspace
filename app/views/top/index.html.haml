@@ -3,9 +3,12 @@
     .header
       %p<
         sample太郎
-        %span.icon
-          = icon "pencil-square-o"
-          = icon "cog"
+        %span.icons
+          = link_to destroy_user_session_path, method: :delete do
+            = icon "sign-out", class: :icon
+          = link_to edit_user_registration_path do
+            = icon "cog", class: :icon
+          = icon "pencil-square-o", class: :icon
     %ul.chats
       %li.chats__list#selected<
         %p.chats__list--name<
