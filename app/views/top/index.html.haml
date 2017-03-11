@@ -5,7 +5,8 @@
         sample太郎
         %span.icon
           = icon "pencil-square-o"
-          = icon "cog"
+          = link_to edit_user_registration_path do
+            = icon "cog"
     %ul.chats
       %li.chats__list#selected<
         %p.chats__list--name<

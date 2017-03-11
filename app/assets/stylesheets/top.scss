@@ -27,6 +27,9 @@ body,html {
 
         .icon {
           float: right;
+          i {
+            color: $white;
+          }
         }
       }
     }
