@@ -20,7 +20,7 @@ module ChatSpace
                       helper_specs: false,
                       fixture: true,
                       fixture_replacement: :factory_girl,
-                      routing_specs: false,
+                      routing_specs: false
     end
   end
 end
