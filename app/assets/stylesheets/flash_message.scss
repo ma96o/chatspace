@@ -5,25 +5,13 @@
     position: relative;
     top: 0;
 
-    &__error {
+    &__danger {
         background-color: $light-red_alert;
         color: $red_alert;
         text-align: center;
      }
 
-    &__alert {
-        background-color: $light-red_alert;
-        color: $red_alert;
-        text-align: center;
-     }
-
-    &__success {
-        background-color: $light-green_alert;
-        color: $green_alert;
-        text-align: center;
-     }
-
-    &__notice {
+    &__info {
         background-color: $light-green_alert;
         color: $green_alert;
         text-align: center;
