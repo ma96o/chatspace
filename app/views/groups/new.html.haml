@@ -1,6 +1,6 @@
 .chat-group-form
   %h1 新規チャットグループ
-  %form#new_chat_group.new_chat_group{"accept-charset" => "UTF-8", :action => "/chat_groups", :method => "post"}
+  %form{"accept-charset" => "UTF-8", :action => "/chat_groups", :method => "post"}
     %input{:name => "utf8", :type => "hidden", :value => "✓"}/
     %input{:name => "authenticity_token", :type => "hidden", :value => "AxFKlYEhD6eqX1PiZoTYQDANtKvgcFSXZQXHt5hyTl55/U/CHC5rtPavrcu2za65riz4tekZEy56vP6kEb2wYA=="}/
     .chat-group-form__field.clearfix
