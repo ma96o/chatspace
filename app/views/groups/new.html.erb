@@ -1,0 +1,44 @@
+<div class='chat-group-form'>
+  <h1>新規チャットグループ</h1>
+  <form class="new_chat_group" id="new_chat_group" action="/chat_groups" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+    <input type="hidden" name="authenticity_token" value="AxFKlYEhD6eqX1PiZoTYQDANtKvgcFSXZQXHt5hyTl55/U/CHC5rtPavrcu2za65riz4tekZEy56vP6kEb2wYA==" />
+    <div class='chat-group-form__field clearfix'>
+      <div class='chat-group-form__field--left'>
+        <label class="chat-group-form__label" for="chat_group_name">グループ名</label>
+      </div>
+      <div class='chat-group-form__field--right'>
+        <input class="chat-group-form__input" placeholder="グループ名を入力してください" type="text" name="chat_group[name]" id="chat_group_name" />
+      </div>
+    </div>
+    <div class='chat-group-form__field clearfix'>
+      <div class='chat-group-form__field--left'>
+        <label class="chat-group-form__label" for="chat_group_チャットメンバーを追加">チャットメンバーを追加</label>
+      </div>
+      <div class='chat-group-form__field--right'>
+        <div class='chat-group-form__search clearfix'>
+          <input class='chat-group-form__input' id='user-search-field' placeholder='追加したいユーザー名を入力してください' type='text'>
+        </div>
+        <div id='user-search-result'></div>
+      </div>
+    </div>
+    <div class='chat-group-form__field clearfix'>
+      <div class='chat-group-form__field--left'>
+        <label class="chat-group-form__label" for="chat_group_チャットメンバー">チャットメンバー</label>
+      </div>
+      <div class='chat-group-form__field--right'>
+        <div id='chat-group-users'>
+          <div class='chat-group-user clearfix' id='chat-group-user-22'>
+            <input name='chat_group[user_ids][]' type='hidden' value='22'>
+            <p class='chat-group-user__name'>seo_kyohei</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='chat-group-form__field clearfix'>
+      <div class='chat-group-form__field--left'></div>
+      <div class='chat-group-form__field--right'>
+        <input type="submit" name="commit" value="Save" class="chat-group-form__action-btn" data-disable-with="Save" />
+      </div>
+    </div>
+  </form>
+</div>
