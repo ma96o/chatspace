@@ -8,9 +8,10 @@
     = csrf_meta_tags
   %body
     - flash.each do |key, value|
-      %div{class: "alert alert-#{key}"}
-        %span.close<
-          ×
-        .alert__message
-          = value
+      .alert
+        = content_tag :div , "", class: "alert__#{key}" do
+          %span.close<
+            ×
+          .alert__message
+            = value
     = yield
