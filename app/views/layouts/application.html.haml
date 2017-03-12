@@ -9,9 +9,8 @@
   %body
     - flash.each do |key, value|
       .alert
-        = content_tag :div , "", class: "alert__#{key}" do
+        = content_tag :div , class: "alert__#{key}" do
           %span#close<
             ×
-          .alert__message
-            = value
+          = value
     = yield

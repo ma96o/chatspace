@@ -8,30 +8,30 @@
     &__error {
         background-color: $light-red_alert;
         color: $red_alert;
+        text-align: center;
      }
 
     &__alert {
         background-color: $light-red_alert;
         color: $red_alert;
+        text-align: center;
      }
 
     &__success {
         background-color: $light-green_alert;
         color: $green_alert;
+        text-align: center;
      }
 
     &__notice {
         background-color: $light-green_alert;
         color: $green_alert;
+        text-align: center;
      }
 
-    .close {
+    #close {
         padding-left: 5px;
         float: left;
-    }
-
-    &__message {
-        text-align: center;
     }
 }
 
