@@ -6,27 +6,23 @@
     top: 0;
 
     &__error {
-        background-color: #f2dede;
-        border-color: #eed3d7;
-        color: #b94a48;
+        background-color: $light-red_alert;
+        color: $red_alert;
      }
 
     &__alert {
-        background-color: #f2dede;
-        border-color: #eed3d7;
-        color: #b94a48;
+        background-color: $light-red_alert;
+        color: $red_alert;
      }
 
     &__success {
-        background-color: #dff0d8;
-        border-color: #d6e9c6;
-        color: #468847;
+        background-color: $light-green_alert;
+        color: $green_alert;
      }
 
     &__notice {
-        background-color: #dff0d8;
-        border-color: #d6e9c6;
-        color: #468847;
+        background-color: $light-green_alert;
+        color: $green_alert;
      }
 
     .close {
