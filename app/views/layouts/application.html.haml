@@ -7,8 +7,10 @@
     = javascript_include_tag "application", "data-turbolinks-track": true
     = csrf_meta_tags
   %body
-    %p.notice<
-      = notice
-    %p.alert<
-      = alert
+    - flash.each do |key, value|
+      %div{class: "alert alert-#{key}"}
+        %span.close<
+          ×
+        .alert__message
+          = value
     = yield
