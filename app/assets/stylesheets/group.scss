@@ -1,0 +1,107 @@
+.chat-group-form {
+  width: 980px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: $white;
+  border: 1px solid $gray_border;
+  border-radius: 5px;
+  box-sizing: border-box;
+  @include clearfix();
+
+  h1 {
+    letter-spacing: 2px;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  &__errors {
+    margin: 30px 0;
+    padding: 20px 40px;
+    border: 1px solid $gray_border;
+    border-radius: 2px;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 10px;
+      color: $red_alert;
+      font-size: 14px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+    }
+  }
+
+  &__field {
+    margin-top: 30px;
+
+    &--left {
+      float: left;
+      width: 30%;
+      padding-right: 20px;
+      padding-left: 20px;
+      box-sizing: border-box;
+    }
+
+    &--right {
+      float: right;
+      width: 70%;
+    }
+  }
+
+  &__label {
+    display: block;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: right;
+  }
+
+  &__input {
+    float: left;
+    width: 100%;
+    line-height: 30px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+  }
+
+  .chat-group-user {
+    padding: 0 15px;
+    line-height: 50px;
+    font-size: 14px;
+    border-bottom: 1px solid $gray_border;
+
+    &__name {
+      float: left;
+    }
+
+    &__btn {
+      float: right;
+      display: inline-block;
+      cursor: pointer;
+
+      &--add {
+        color: $vivid-blue;
+      }
+
+      &--remove {
+        color: $red_alert;
+      }
+    }
+  }
+
+  &__action-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    color: $white;
+    background-color: $vivid-blue;
+    border: 0;
+  }
+}
