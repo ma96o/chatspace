@@ -2,12 +2,13 @@ class GroupsController < ApplicationController
   def new ; end
 
   def create
-    group = Group.create(name: group_params[:name])
-    group_params[:user_ids].map{ |user_id| group.users_groups.create(user_id: user_id) if user_id != "" }
-    redirect_to root
+    group = Group.create(group_params)
+    redirect_to root_path
   end
 
-  def edit ; end
+  def edit
+    @group = Group.find(params[:id])
+  end
 
   private
   def group_params
