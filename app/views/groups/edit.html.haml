@@ -1,26 +1,23 @@
 .chat-group-form
   %h1 チャットグループ編集
-  %form{"accept-charset" => "UTF-8", :action => "/chat_groups/22", :method => "post"}
-    %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-    %input{:name => "_method", :type => "hidden", :value => "patch"}/
-    %input{:name => "authenticity_token", :type => "hidden", :value => "U5ABp0/UobRQTSwsR0V40bX1w3t0rZ0CTqrVyLecD+L6sdhBRO/gVcKy7w/Rgxnc7Hf0Ts39996dal3to5fTag=="}/
+  = form_for @group do |f|
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        %label.chat-group-form__label{:for => "chat_group_name"} グループ名
+        = f.label :name, 'グループ名', class: 'chat-group-form__label'
       .chat-group-form__field--right
-        %input#chat_group_name.chat-group-form__input{:name => "chat_group[name]", :placeholder => "グループ名を入力してください", :type => "text", :value => @group[:name]}/
+        = f.text_field :name, class: 'chat-group-form__input', id: 'chat_group_name', placeholder: 'グループ名を入力してください'
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        %label.chat-group-form__label{:for => "chat_group_チャットメンバーを追加"} チャットメンバーを追加
+        = f.label 'チャットメンバーを追加', 'チャットメンバーを追加', class: 'chat-group-form__label'
       .chat-group-form__field--right
         .chat-group-form__search.clearfix
-          = collection_check_boxes(:chat_group, :user_ids, User.all, :id, :name) do |b|
+          = collection_check_boxes(:group, :user_ids, User.all, :id, :name) do |b|
             = b.label { b.check_box + b.text }
         #user-search-result
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
+        = f.label 'チャットメンバー', 'チャットメンバー', class: 'chat-group-form__label'
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
-        %input.chat-group-form__action-btn{"data-disable-with" => "Save", :name => "commit", :type => "submit", :value => "Save"}/
+        = f.submit 'Save', class: 'chat-group-form__action-btn'
