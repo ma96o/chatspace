@@ -5,8 +5,9 @@ class GroupsController < ApplicationController
 
   def create
     group = Group.new(group_params)
-    redirect_to :back, flash: { alert: "グループ生成に失敗しました" } and return if group.save
-    render "top/index"
+    redirect_to root_path and return if group.save
+    flash.now[:alert] = "グループ作成に失敗しました"
+    render "index"
   end
 
   def edit ; end
