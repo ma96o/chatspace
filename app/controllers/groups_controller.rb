@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :group_find, only: %i(edit update)
+
   def new
     @group = Group.new
   end
@@ -14,13 +16,10 @@ class GroupsController < ApplicationController
     end
   end
 
-  def edit
-    @group = Group.find(params[:id])
-  end
+  def edit ; end
 
   def update
-    group = Group.find(params[:id])
-    if group.update(group_params)
+    if @group.update(group_params)
       flash.now[:notice] = "グループを編集しました"
       render "top/index"
     else
@@ -33,5 +32,9 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name, user_ids: [])
+  end
+
+  def group_find
+    @group = Group.find(params[:id])
   end
 end
