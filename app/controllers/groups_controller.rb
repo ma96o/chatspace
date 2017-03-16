@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
   def create
     group = Group.new(group_params)
     if group.save
-      flash.now["notice"] = "グループを作成しました"
+      flash.now[:notice] = "グループを作成しました"
       render "top/index"
     else
       flash.now[:alert] = "グループ作成に失敗しました"
