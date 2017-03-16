@@ -20,8 +20,13 @@ class GroupsController < ApplicationController
 
   def update
     group = Group.find(params[:id])
-    redirect_to root_path and return if group.update(group_params)
-    render 'edit'
+    if group.update(group_params)
+      flash.now[:notice] = "グループを編集しました"
+      render "top/index"
+    else
+      flash.now[:alert] = "グループ編集に失敗しました"
+      render "edit"
+    end
   end
 
   private
