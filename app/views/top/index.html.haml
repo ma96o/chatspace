@@ -99,6 +99,7 @@
             %p.message__text<
               おい
       .form-wrapper
-        %form
-          %input.text{type: :text, placeholder: "type a message"}
-          %input.button{type: :submit, value: "Send"}
+        = form_for @message do |f|
+          = f.hidden_field :user_id
+          = f.text_field :text, class: :text, placeholder: 'type a message'
+          = f.submit 'Send', class: :button
