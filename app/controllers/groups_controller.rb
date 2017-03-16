@@ -5,9 +5,13 @@ class GroupsController < ApplicationController
 
   def create
     group = Group.new(group_params)
-    redirect_to root_path and return if group.save
-    flash.now[:alert] = "グループ作成に失敗しました"
-    render "index"
+    if group.save
+      flash.now["notice"] = "グループを作成しました"
+      render "top/index"
+    else
+      flash.now[:alert] = "グループ作成に失敗しました"
+      render "new"
+    end
   end
 
   def edit ; end
