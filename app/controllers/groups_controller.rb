@@ -10,8 +10,15 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
+  def update
+    group = Group.find(params[:id])
+    redirect_to root_path and return if group.update(group_params)
+    render 'edit'
+  end
+
   private
+
   def group_params
-    params.require(:chat_group).permit(:name, user_ids: [])
+    params.require(:group).permit(:name, user_ids: [])
   end
 end
