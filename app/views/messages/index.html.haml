@@ -51,7 +51,11 @@
               %p.message__text<
                 = message.text
       .form-wrapper
-        = form_for @message do |f|
-          = f.hidden_field :user_id
-          = f.text_field :text, class: :text, placeholder: 'type a message'
-          = f.submit 'Send', class: :button
+        - if params[:user_id]
+          = form_for @message, url: "/users/#{params[:user_id]}/messages" do |f|
+            = f.text_field :text, class: :text, placeholder: 'type a message'
+            = f.submit 'Send', class: :button
+        - elsif params[:group_id]
+          = form_for @message, url: "/users/#{params[:group_id]}/messages" do |f|
+            = f.text_field :text, class: :text, placeholder: 'type a message'
+            = f.submit 'Send', class: :button
