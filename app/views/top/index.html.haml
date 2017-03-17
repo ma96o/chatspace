@@ -42,62 +42,14 @@
 
       .container
         %ul
-          %li.message
-            %p.message__name<
-              sample花子
-              %span<
-                2017/02/07 06:27:02
-            %p.message__text<
-              hogehogeなう
-          %li.message.my-message
-            %p.message__name<
-              sample太郎
-              %span<
-                2017/02/07 06:27:34
-            %p.message__text<
-              hoge~~~~~
-          %li.message
-            %p.message__name<
-              sample花子
-              %span<
-                2017/02/07 06:27:56
-            %p.message__text<
-              おらおら
-          %li.message
-            %p.message__name<
-              sample花子
-              %span<
-                2017/02/07 06:28:33
-            %p.message__text<
-              おい
-          %li.message
-            %p.message__name<
-              sample花子
-              %span<
-                2017/02/07 06:27:02
-            %p.message__text<
-              hogehogeなう
-          %li.message.my-message
-            %p.message__name<
-              sample太郎
-              %span<
-                2017/02/07 06:27:34
-            %p.message__text<
-              hoge~~~~~
-          %li.message
-            %p.message__name<
-              sample花子
-              %span<
-                2017/02/07 06:27:56
-            %p.message__text<
-              おらおら
-          %li.message
-            %p.message__name<
-              sample花子
-              %span<
-                2017/02/07 06:28:33
-            %p.message__text<
-              おい
+          - @messages.each do |message|
+            %li.message
+              %p.message__name<
+                = message.user.name
+                %span<
+                  = message.created_at
+              %p.message__text<
+                = message.text
       .form-wrapper
         = form_for @message do |f|
           = f.hidden_field :user_id
