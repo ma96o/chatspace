@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def index
-    @hoge = set_hoge
+    @hoge = set_hoge # chat相手のuserかgroupの情報を取ってくる
     @messages = set_messages
 
     @message = Message.new
