@@ -56,6 +56,6 @@
             = f.text_field :text, class: :text, placeholder: 'type a message'
             = f.submit 'Send', class: :button
         - elsif params[:group_id]
-          = form_for @message, url: "/users/#{params[:group_id]}/messages" do |f|
+          = form_for @message, url: "/groups/#{params[:group_id]}/messages" do |f|
             = f.text_field :text, class: :text, placeholder: 'type a message'
             = f.submit 'Send', class: :button
