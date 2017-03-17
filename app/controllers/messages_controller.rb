@@ -16,17 +16,16 @@ class MessagesController < ApplicationController
 
     @message = Message.new
     @message.user_id = current_user
-    render "top/index"
   end
 
   def create
 
     message = Message.new(message_params)
     if message.save
-      redirect_to root_path
+      redirect_to "index"
     else
       flash.now[:alert] = "メッセージの送信に失敗しました"
-      render "top/index"
+      render "index"
     end
   end
 
