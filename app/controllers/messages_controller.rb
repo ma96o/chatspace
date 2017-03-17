@@ -24,25 +24,31 @@ class MessagesController < ApplicationController
 
   def set_message
     if params[:user_id]
-      friend = User.find(params[:user_id])
-      message = friend.messages.new(message_params)
+      parent = set_user
     elsif params[:group_id]
-      group = Group.find(params[:group_id])
-      message = group.messages.new(message_params)
+      parent = set_group
     end
-    return message
+    return parent.messages.new(message_params)
   end
 
   def set_messages
     if params[:user_id]
-      friend = User.find(params[:user_id]) # メッセージを受け取るユーザ
+      friend = set_user # メッセージを受け取るユーザ
       friend_messages = current_user.messages.where(user_id: params[:id])
       my_messages = friend.messages.where(user_id: current_user)
       @messages = my_messages.to_a.concat(friend_messages).sort! { |a, b| b[:created_at] <=> a[:created_at] }
     elsif params[:group_id]
-      group = Group.find(params[:group_id])
+      group = set_group
       @messages = group.messages
     end
     return @messages
+  end
+
+  def set_user
+    User.find(params[:user_id])
+  end
+
+  def set_group
+    Group.find(params[:group_id])
   end
 end
