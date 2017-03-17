@@ -5,7 +5,6 @@ class CreateUsersGroups < ActiveRecord::Migration[5.0]
       t.references :group, null: false
       t.integer :status, null: false, default: 0
       t.timestamps
-      drop_table :usersgroups
     end
   end
 end
