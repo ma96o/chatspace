@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   def index
+    @hoge = set_hoge
     @messages = set_messages
 
     @message = Message.new
@@ -23,11 +24,7 @@ class MessagesController < ApplicationController
   end
 
   def set_message
-    if params[:user_id]
-      parent = set_user
-    elsif params[:group_id]
-      parent = set_group
-    end
+    parent = set_hoge
     return parent.messages.new(message_params)
   end
 
@@ -50,5 +47,13 @@ class MessagesController < ApplicationController
 
   def set_group
     Group.find(params[:group_id])
+  end
+
+  def set_hoge
+    if params[:user_id]
+      set_user
+    elsif params[:group_id]
+      set_group
+    end
   end
 end
