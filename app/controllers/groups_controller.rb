@@ -8,11 +8,10 @@ class GroupsController < ApplicationController
   def create
     group = Group.new(group_params)
     if group.save
-      flash.now[:notice] = "グループを作成しました"
-      render "top/index"
+      redirect_to group_messages_path(group), notice: "グループを作成しました"
     else
       flash.now[:alert] = "グループ作成に失敗しました"
-      render "new"
+      render action: :new
     end
   end
 
@@ -20,11 +19,10 @@ class GroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
-      flash.now[:notice] = "グループを編集しました"
-      render "top/index"
+      redirect_to group_messages_path(@group), notice: "グループを編集しました"
     else
       flash.now[:alert] = "グループ編集に失敗しました"
-      render "edit"
+      render action: :edit
     end
   end
 

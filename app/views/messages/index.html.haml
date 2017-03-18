@@ -1,0 +1,38 @@
+#wrapper
+  #side-bar
+    .header
+      %p<
+        = current_user.name
+        %span.icons
+          = link_to destroy_user_session_path, method: :delete do
+            = icon "sign-out", class: :icon
+          = link_to edit_user_registration_path do
+            = icon "cog", class: :icon
+          = link_to new_group_path do
+            = icon "pencil-square-o", class: :icon
+    %ul.chats
+      = render @groups
+  #main
+    .contents
+      .header
+        .info
+          %p.info__name<
+            = @group.name
+          %p.info__members<
+            Members:
+            - @group.users.each do |user|
+              = user.name
+            %a
+              = icon "plus-circle"
+        .buttons<
+          %ul
+            = link_to edit_group_path(@group.id) do
+              %li.buttons__list<
+                Edit
+      .container
+        %ul
+          = render @messages
+      .form-wrapper
+        = form_for [@group, @message] do |f|
+          = f.text_field :text, class: :text, placeholder: 'type a message'
+          = f.submit 'Send', class: :button

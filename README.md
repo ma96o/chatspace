@@ -10,19 +10,20 @@ Rails 5.0.1
 
 ### User  
 ```
-  has_many :messages, as: :messageable  
+  has_many :messages  
   has_many :groups, through: :users_groups
 ```
 
 ### Group  
 ```
-  has_many :messages, as:messageable, dependent: :delete_all  
+  has_many :messages  
   has_many :users, through: :users_groups
 ```
 
 ### Message  
 ```
-  belongs_to :messagable, polymorphic: true
+  belongs_to :user  
+  belongs_to :group
 ```
 
 ### UsersGroup  
@@ -47,8 +48,7 @@ Rails 5.0.1
 |:----------------|:--------|:-----|:--------------|:----------------------------------|
 | id              | integer | FALSE|               | 主キー                             |
 | user_id         | integer | FALSE|               | 投稿したユーザのID (外部キー)         |
-| messagable_type | string  | FALSE|               | Group or User (index)              |
-| messagable_id   | integer | FALSE|               | 送り先のuser_id or group_id (index) |
+| group_id   | integer | FALSE|               | 送り先のgroupのID (外部キー、index) |
 | text            | text    |      |               | 内容                               |
 | image           | text    |      |               | 画像                               |
 
