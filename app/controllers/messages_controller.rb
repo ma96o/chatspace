@@ -1,7 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_groups, only: %i(index create)
-  before_action :set_group, only: %i(index create)
-  before_action :set_messages, only: %i(index create)
+  before_action :set_groups, :set_group, :set_messages
 
   def index
     @message = Message.new
@@ -13,7 +11,7 @@ class MessagesController < ApplicationController
       redirect_to group_messages_path, notice: "メッセージを送信しました"
     else
       flash.now[:alert] = "メッセージの送信に失敗しました"
-      render action: :index, alert: "メッセージの送信に失敗しました"
+      render action: :index
     end
   end
 
