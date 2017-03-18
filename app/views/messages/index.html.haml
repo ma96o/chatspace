@@ -8,7 +8,8 @@
             = icon "sign-out", class: :icon
           = link_to edit_user_registration_path do
             = icon "cog", class: :icon
-          = icon "pencil-square-o", class: :icon
+          = link_to new_group_path do
+            = icon "pencil-square-o", class: :icon
     %ul.chats
       - @groups.each do |group|
         = link_to group_messages_path(group.id) do
