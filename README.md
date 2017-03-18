@@ -10,19 +10,20 @@ Rails 5.0.1
 
 ### User  
 ```
-  has_many :messages, as: :messageable  
+  has_many :messages  
   has_many :groups, through: :users_groups
 ```
 
 ### Group  
 ```
-  has_many :messages, as:messageable, dependent: :delete_all  
+  has_many :messages  
   has_many :users, through: :users_groups
 ```
 
 ### Message  
 ```
-  belongs_to :messagable, polymorphic: true
+  belongs_to :user  
+  belongs_to :group
 ```
 
 ### UsersGroup  
