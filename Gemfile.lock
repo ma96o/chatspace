@@ -65,6 +65,11 @@ GEM
       html2haml
     erubis (2.7.0)
     execjs (2.7.0)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
     globalid (0.3.7)
@@ -211,6 +216,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   erb2haml
+  factory_girl_rails (~> 4.4.1)
   font-awesome-sass (~> 4.7.0)
   haml-rails (~> 0.9)
   jbuilder (~> 2.0)
