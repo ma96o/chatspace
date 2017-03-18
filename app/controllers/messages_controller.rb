@@ -9,6 +9,7 @@ class MessagesController < ApplicationController
   def create
     message = Message.new(message_params)
     if message.save
+      flash.now[:notice] = "メッセージを送信しました"
       redirect_to group_messages_path
     else
       flash.now[:alert] = "メッセージの送信に失敗しました"
