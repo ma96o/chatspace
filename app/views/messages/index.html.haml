@@ -11,7 +11,7 @@
           = link_to new_group_path do
             = icon "pencil-square-o", class: :icon
     %ul.chats
-      = render partial: 'group', collection: @groups
+      = render @groups
   #main
     .contents
       .header
@@ -31,7 +31,7 @@
                 Edit
       .container
         %ul
-          = render partial: 'message', collection: @messages
+          = render @messages
       .form-wrapper
         = form_for @message, url: "/groups/#{@group.id}/messages" do |f|
           = f.text_field :text, class: :text, placeholder: 'type a message'
