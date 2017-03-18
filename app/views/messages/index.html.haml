@@ -33,6 +33,6 @@
         %ul
           = render @messages
       .form-wrapper
-        = form_for @message, url: "/groups/#{@group.id}/messages" do |f|
+        = form_for [@group, @message] do |f|
           = f.text_field :text, class: :text, placeholder: 'type a message'
           = f.submit 'Send', class: :button
