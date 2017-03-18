@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20170317135055) do
     t.integer  "user_id",                  null: false
     t.integer  "group_id",                 null: false
     t.text     "text",       limit: 65535, null: false
+    t.text     "image",      limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["group_id"], name: "index_messages_on_group_id", using: :btree
