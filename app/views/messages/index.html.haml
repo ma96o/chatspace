@@ -10,36 +10,43 @@
             = icon "cog", class: :icon
           = icon "pencil-square-o", class: :icon
     %ul.chats
-      %li.chats__list#selected<
-        %p.chats__list--name<
-          sample1
-        %p.chats__list--message<
-          hogehoge1
-      %li.chats__list<
-        %p.chats__list--name<
-          sample2
-        %p.chats__list--message<
-          hogehoge2
-      %li.chats__list<
-        %p.chats__list--name<
-          sample3
-        %p.chats__list--message<
-          hogehoge3
+      - @groups.each do |group|
+        = link_to group_messages_path(group.id) do
+          - if group.id.to_s == params[:group_id]
+            %li.chats__list#selected<
+              %p.chats__list--name<
+                = group.name
+              %p.chats__list--message<
+                - unless group.messages.last.nil?
+                  = group.messages.last.text
+                - else
+                  メッセージがありません
+          - else
+            %li.chats__list<
+              %p.chats__list--name<
+                = group.name
+              %p.chats__list--message<
+                - unless group.messages.last.nil?
+                  = group.messages.last.text
+                - else
+                  メッセージがありません
   #main
     .contents
       .header
         .info
           %p.info__name<
-            sample1
+            = @group.name
           %p.info__members<
-            Members: sample太郎,sample花子 ..
+            Members:
+            - @group.users.each do |user|
+              = user.name
             %a
               = icon "plus-circle"
         .buttons<
           %ul
-            %li.buttons__list<
-              Edit
-
+            = link_to edit_group_path(@group.id) do
+              %li.buttons__list<
+                Edit
       .container
         %ul
           - @messages.each do |message|
@@ -51,6 +58,6 @@
               %p.message__text<
                 = message.text
       .form-wrapper
-        = form_for @message, url: "groups/#{@group.id}/messages" do |f|
+        = form_for @message, url: "/groups/#{@group.id}/messages" do |f|
           = f.text_field :text, class: :text, placeholder: 'type a message'
           = f.submit 'Send', class: :button
