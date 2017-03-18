@@ -1,0 +1,13 @@
+= link_to group_messages_path(group.id) do
+  - if group.id.to_s == params[:group_id]
+    %li.chats__list#selected<
+      %p.chats__list--name<
+        = group.name
+      %p.chats__list--message<
+        = group.messages.last.nil? ? "メッセージはありません" : group.messages.last.text
+  - else
+    %li.chats__list<
+      %p.chats__list--name<
+        = group.name
+      %p.chats__list--message<
+        = group.messages.last.nil? ? "メッセージはありません" : group.messages.last.text

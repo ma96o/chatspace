@@ -11,26 +11,7 @@
           = link_to new_group_path do
             = icon "pencil-square-o", class: :icon
     %ul.chats
-      - @groups.each do |group|
-        = link_to group_messages_path(group.id) do
-          - if group.id.to_s == params[:group_id]
-            %li.chats__list#selected<
-              %p.chats__list--name<
-                = group.name
-              %p.chats__list--message<
-                - unless group.messages.last.nil?
-                  = group.messages.last.text
-                - else
-                  メッセージがありません
-          - else
-            %li.chats__list<
-              %p.chats__list--name<
-                = group.name
-              %p.chats__list--message<
-                - unless group.messages.last.nil?
-                  = group.messages.last.text
-                - else
-                  メッセージがありません
+      = render partial: 'group', collection: @groups
   #main
     .contents
       .header
@@ -50,14 +31,7 @@
                 Edit
       .container
         %ul
-          - @messages.each do |message|
-            %li.message
-              %p.message__name<
-                = message.user.name
-                %span<
-                  = message.created_at
-              %p.message__text<
-                = message.text
+          = render partial: 'message', collection: @messages
       .form-wrapper
         = form_for @message, url: "/groups/#{@group.id}/messages" do |f|
           = f.text_field :text, class: :text, placeholder: 'type a message'
