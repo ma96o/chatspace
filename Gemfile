@@ -7,6 +7,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rake', '< 11.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
 
