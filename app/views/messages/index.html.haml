@@ -35,4 +35,7 @@
       .form-wrapper
         = form_for [@group, @message] do |f|
           = f.text_field :text, class: :text, placeholder: 'type a message'
+          = f.label :image, class: "image_file" do
+            = icon "picture-o", class: :icon
+            = f.file_field :image, style: "display: none;"
           = f.submit 'Send', class: :button
