@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'carrierwave'
 gem 'devise'
 gem 'erb2haml'
 gem 'haml-rails', '~> 0.9'
