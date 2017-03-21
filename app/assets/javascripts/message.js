@@ -17,11 +17,9 @@ $(function() {
     e.preventDefault();
     var textField = $('#message_text');
     var message = textField.val();
-    var s = $(location).attr('pathname');
-    s = s.split('/');
     $.ajax({
       type: 'POST',
-      url: '/groups/' + s[2] + '/messages',
+      url: $(location).attr('pathname'),
       data: {
         message: {
           text: message
