@@ -33,4 +33,8 @@ $(function() {
       textField.val("");
     })
   });
+
+  setTimeout(function() {
+    location.reload();
+  }, 10000);
 });
