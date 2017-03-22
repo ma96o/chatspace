@@ -14,6 +14,9 @@ class MessagesController < ApplicationController
           notice: "メッセージを送信しました"
         }
         format.json {
+          @message = Jbuilder.encode do |json|
+            json.message @message
+          end
           render json: @message
         }
       end

@@ -1,5 +1,6 @@
 $(function() {
   function buildHTML(message) {
+    console.log(message)
     var userName = $('#user-name').text();
     var html = $('<li class="message">').append(
           `<p class="message__name">
@@ -36,7 +37,7 @@ $(function() {
     })
   });
 
-  setTimeout(function() {
-    location.reload();
-  }, 10000);
+  // setTimeout(function() {
+  //   location.reload();
+  // }, 10000);
 });
