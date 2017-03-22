@@ -7,7 +7,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-gem 'rake', '< 11.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
 
@@ -21,7 +20,7 @@ group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails', '~> 4.4.1'
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.1.0'
+  gem 'rspec-rails', '~> 3.5.0'
 end
 
 group :development do
