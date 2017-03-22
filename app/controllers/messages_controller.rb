@@ -13,12 +13,7 @@ class MessagesController < ApplicationController
           redirect_to group_messages_path(@group),
           notice: "メッセージを送信しました"
         }
-        format.json {
-          @message = Jbuilder.encode do |json|
-            json.message @message
-          end
-          render json: @message
-        }
+        format.json
       end
     else
       flash.now[:alert] = "メッセージの送信に失敗しました"

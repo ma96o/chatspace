@@ -22,7 +22,7 @@ $(function() {
     var message = textField.val();
     $.ajax({
       type: 'POST',
-      url: $(location).attr('pathname'),
+      url: './messages.json',
       data: {
         message: {
           text: message
