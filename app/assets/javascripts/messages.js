@@ -1,6 +1,5 @@
 $(function() {
   function buildHTML(message) {
-    console.log(message)
     var userName = $('#user-name').text();
     var html = $('<li class="message">').append(
           `<p class="message__name">
