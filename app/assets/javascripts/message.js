@@ -1,15 +1,17 @@
 $(function() {
   function buildHTML(message) {
     var userName = $('#user-name').text();
-    var html = $('<li class="message">').append(`<p class="message__name">
-                                                   ${userName}
-                                                   <span>
-                                                     ${message.created_at}
-                                                   </span>
-                                                 </p>
-                                                 <p class="message__text">
-                                                   ${message.text}
-                                                 </p>`);
+    var html = $('<li class="message">').append(
+          `<p class="message__name">
+             ${userName}
+             <span>
+               ${message.created_at}
+             </span>
+           </p>
+           <p class="message__text">
+             ${message.text}
+           </p>`
+          );
     return html;
   };
 
