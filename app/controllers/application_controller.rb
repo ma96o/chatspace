@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    group_messages_path(current_user.groups.first)
+    unless current_user.groups.first.nil?
+      group_messages_path(current_user.groups.first)
+    else
+      root_path
+    end
   end
 
   private
