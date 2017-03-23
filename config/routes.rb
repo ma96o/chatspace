@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :groups, except: %i(index delete show) do
     resources :messages, only: %i(index create)
+    collection do
+      get :ajax_user_list
+    end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
