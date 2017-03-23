@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'top#index'
+  root 'groups#new'
   devise_for :users
   resources :groups, except: %i(index delete show) do
     resources :messages, only: %i(index create)
