@@ -6,19 +6,26 @@
       = f.text_field :name, placeholder: 'グループ名を入力してください', class: 'chat-group-form__input', id: 'chat_group_name'
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      = f.label 'チャットメンバーを追加', 'チャットメンバーを追加', class: 'chat-group-form__label'
+      = f.label 'チャットメンバーを追加', class: 'chat-group-form__label'
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-        %input#user-search-field.chat-group-form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
+        %input#user-search-field.chat-group-form__input{ placeholder: '追加したいユーザー名を入力してください', type: 'text' }
       #user-search-result
-  - if @group[:id]
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label 'チャットメンバー', class: 'chat-group-form__label'
+        = f.label :name, "チャットメンバー", class: "chat-group-form__label"
       .chat-group-form__field--right
         #chat-group-users
-          #chat-group-user-22.chat-group-user.clearfix
-            %input{:name => "chat_group[user_ids][]", :type => "hidden", :value => "22"}/
-            %p.chat-group-user__name seo_kyohe
+          .chat-group-user.clearfix
+            = hidden_field_tag 'group[user_ids][]', current_user.id
+            %p.chat-group-user__name
+              = current_user.name
+          - @group.users.each do |user|
+            - if(user.id != current_user.id)
+              .chat-group-user.clearfix
+                = hidden_field_tag 'group[user_ids][]', user.id
+                %p.chat-group-user__name
+                  = user.name
+                  = content_tag "a", '削除', class: "user-search-remove chat-group-user__btn chat-group-user__btn--remove", data: { user: { id: user.id }}
   .chat-group-form__field.clearfix
     = f.submit 'Save', class: 'chat-group-form__action-btn'
