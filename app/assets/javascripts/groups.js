@@ -58,8 +58,8 @@ $(function(){
 
   // 「追加」ボタンを押すとリストに追加
   $('.user-search-add').on('click', function(){
-    var id = $(this).attr('data-user-id');
-    var name = $(this).attr('data-user-name');
+    var id = $(this).data('user-id');
+    var name = $(this).data('user-name');
     $(this).parent().hide();
     var html = buildMemberList(id, name);
     $('#chat-group-users').append(html);
@@ -67,7 +67,7 @@ $(function(){
 
   // 「削除」ボタンを押すとリストから消す
   $('.user-search-remove').on('click', function(){
-    var id = $(this).attr('data-user-id');
+    var id = $(this).data('user-id');
     $('.user-search-add[data-user-id=' + id + ']').parent().show();
     $(this).parent().remove();
   });
