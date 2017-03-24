@@ -37,7 +37,7 @@ $(function(){
     var ajaxSearch = function(){
       $.ajax({
         type: 'GET',
-        url: '/groups/ajax_user_list.json',
+        url: '/users/ajax_user_list.json',
         data: {
           keyword: name
         }
@@ -57,16 +57,17 @@ $(function(){
   });
 
   // 「追加」ボタンを押すとリストに追加
-  $('.user-search-add').on('click', function(){
+  $(document).on('click', '.user-search-add', function(){
     var id = $(this).data('user-id');
     var name = $(this).data('user-name');
+    console.log(id);
     $(this).parent().hide();
     var html = buildMemberList(id, name);
     $('#chat-group-users').append(html);
   });
 
   // 「削除」ボタンを押すとリストから消す
-  $('.user-search-remove').on('click', function(){
+  $(document).on('click', '.user-search-remove', function(){
     var id = $(this).data('user-id');
     $('.user-search-add[data-user-id=' + id + ']').parent().show();
     $(this).parent().remove();
