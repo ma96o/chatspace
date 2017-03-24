@@ -32,6 +32,8 @@ $(function(){
 
   $('#user-search-field').on('keyup', function() {
     var name = $(this).val();
+
+    // 入力されたキーワードからユーザ名で検索をかける
     var ajaxSearch = function(){
       $.ajax({
         type: 'GET',
@@ -46,7 +48,7 @@ $(function(){
       });
     };
 
-    // 入力されて500秒ごとに検索
+    // 500ミリ秒の入力待機時間あるとajaxSearch実行
     if (name != preName && name.length !== 0){
       clearTimeout(preFunc);
       preFunc = setTimeout(ajaxSearch, 500);
