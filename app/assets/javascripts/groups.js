@@ -30,8 +30,7 @@ $(function(){
     return html;
   }
 
-  $(document).on('keyup', '.chat-group-form__input',
-  function() {
+  $('#user-search-field').on('keyup', function() {
     var name = $(this).val();
     var ajaxSearch = function(){
       $.ajax({
@@ -57,7 +56,7 @@ $(function(){
   });
 
   // 「追加」ボタンを押すとリストに追加
-  $(document).on('click', '.user-search-add', function(){
+  $('.user-search-add').on('click', function(){
     var id = $(this).attr('data-user-id');
     var name = $(this).attr('data-user-name');
     $(this).parent().hide();
@@ -66,7 +65,7 @@ $(function(){
   });
 
   // 「削除」ボタンを押すとリストから消す
-  $(document).on('click', '.user-search-remove', function(){
+  $('.user-search-remove').on('click', function(){
     var id = $(this).attr('data-user-id');
     $('.user-search-add[data-user-id=' + id + ']').parent().show();
     $(this).parent().remove();
