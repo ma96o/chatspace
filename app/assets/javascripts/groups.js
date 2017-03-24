@@ -2,29 +2,29 @@ $(function(){
   var preName;
   var preFunc;
 
-  function SearchUserResult(users) {
+  function searchUserResult(users) {
     var html = '';
     $.each(users, function(index, user) {
       html += '<div class="chat-group-user clearfix">' +
                 '<p class="chat-group-user__name">' +
                   user.name +
-                  '<a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="' + user.id + '" data-user-name="' + user.name + '">' +
+                  '<span class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="' + user.id + '" data-user-name="' + user.name + '">' +
                     '追加' +
-                  '</a>' +
+                  '</span>' +
                 '</p>' +
               '</div>';
     });
     return html;
   }
 
-  function AddUseList(id, name){
+  function addUserList(id, name){
     var html = '<div class="chat-group-user clearfix" id="chat-group-user-' + id + '">' +
                  '<input type="hidden" name="group[user_ids][]" value="' + id + '">' +
                    '<p class="chat-group-user__name">' +
                      name +
-                     '<a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove" data-user-id="' + id + '">' +
+                     '<span class="user-search-remove chat-group-user__btn chat-group-user__btn--remove" data-user-id="' + id + '">' +
                        '削除' +
-                     '</a>' +
+                     '</span>' +
                    '</p>' +
                '</div>';
     return html;
@@ -43,7 +43,7 @@ $(function(){
         }
       })
       .done(function(data) {
-        var html = SearchUserResult(data);
+        var html = searchUserResult(data);
         $('#user-search-result').html(html);
       });
     };
@@ -61,7 +61,7 @@ $(function(){
     var id = $(this).data('user-id');
     var name = $(this).data('user-name');
     $(this).parent().hide();
-    var html = AddUseList(id, name);
+    var html = addUserList(id, name);
     $('#chat-group-users').append(html);
   });
 
