@@ -1,0 +1,6 @@
+- if(user.id != current_user.id)
+  .chat-group-user.clearfix
+    = hidden_field_tag 'group[user_ids][]', user.id
+    %p.chat-group-user__name
+      = user.name
+      = content_tag "span", '削除', class: "user-search-remove chat-group-user__btn chat-group-user__btn--remove", data: { user: { id: user.id }}
