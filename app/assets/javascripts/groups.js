@@ -37,7 +37,7 @@ $(function(){
     var ajaxSearch = function(){
       $.ajax({
         type: 'GET',
-        url: '/users/ajax_user_list.json',
+        url: '/users.json',
         data: {
           keyword: name
         }
