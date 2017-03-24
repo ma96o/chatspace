@@ -26,8 +26,7 @@ $(function() {
         message: {
           text: message
         }
-      },
-      dataType: 'json'
+      }
     })
     .done(function(data) {
       var html = buildHTML(data);

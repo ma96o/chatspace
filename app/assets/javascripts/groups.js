@@ -38,8 +38,7 @@ $(function(){
         url: '/groups/ajax_user_list.json',
         data: {
           keyword: name
-        },
-        dataType: 'json',
+        }
       })
       .done(function(data) {
         var html = buildUserList(data);
