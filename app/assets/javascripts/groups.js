@@ -60,7 +60,6 @@ $(function(){
   $(document).on('click', '.user-search-add', function(){
     var id = $(this).data('user-id');
     var name = $(this).data('user-name');
-    console.log(id);
     $(this).parent().hide();
     var html = buildMemberList(id, name);
     $('#chat-group-users').append(html);
