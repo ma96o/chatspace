@@ -2,7 +2,7 @@ $(function(){
   var preName;
   var preFunc;
 
-  function buildUserList(users) {
+  function SearchUserResult(users) {
     var html = '';
     $.each(users, function(index, user) {
       html += '<div class="chat-group-user clearfix">' +
@@ -17,7 +17,7 @@ $(function(){
     return html;
   }
 
-  function buildMemberList(id, name){
+  function AddUseList(id, name){
     var html = '<div class="chat-group-user clearfix" id="chat-group-user-' + id + '">' +
                  '<input type="hidden" name="group[user_ids][]" value="' + id + '">' +
                    '<p class="chat-group-user__name">' +
@@ -43,7 +43,7 @@ $(function(){
         }
       })
       .done(function(data) {
-        var html = buildUserList(data);
+        var html = SearchUserResult(data);
         $('#user-search-result').html(html);
       });
     };
@@ -61,7 +61,7 @@ $(function(){
     var id = $(this).data('user-id');
     var name = $(this).data('user-name');
     $(this).parent().hide();
-    var html = buildMemberList(id, name);
+    var html = AddUseList(id, name);
     $('#chat-group-users').append(html);
   });
 
