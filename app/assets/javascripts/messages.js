@@ -1,7 +1,7 @@
 $(function() {
   function buildHTML(message) {
     var userName = $('#user-name').text();
-    var messageImage = !message.image ? `` : `<img src="${message.image}" alt="Plofile fb n">` ;
+    var messageImage = message.image ? `<img src="${message.image}" alt="Plofile fb n">` : `` ;
     var html = $('<li class="message">').append(
           `<p class="message__name">
              ${userName}
@@ -22,9 +22,7 @@ $(function() {
     e.preventDefault();
     var textField = $('#message_text');
     var fileField = $('#message_image');
-    if ( !textField.val() && !fileField.val()) {
-      alert('メッセージを入力してください');
-    } else {
+    if ( textField.val() || fileField.val()) {
       var formData = new FormData($(this)[0]);
       $.ajax({
         type: 'POST',
@@ -37,8 +35,10 @@ $(function() {
         var html = buildHTML(data);
         $('#messages').append(html);
         textField.val("");
-        $form.reset();
+        return false;
       })
+    } else {
+      alert('メッセージを入力してください');
     };
   });
 
