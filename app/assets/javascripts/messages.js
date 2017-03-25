@@ -21,20 +21,25 @@ $(function() {
     var $form = this;
     e.preventDefault();
     var textField = $('#message_text');
-    var formData = new FormData($(this)[0]);
-    $.ajax({
-      type: 'POST',
-      url: './messages.json',
-      processData: false,
-      contentType: false,
-      data: formData
-    })
-    .done(function(data) {
-      var html = buildHTML(data);
-      $('#messages').append(html);
-      textField.val("");
-      $form.reset();
-    })
+    var fileField = $('#message_image');
+    if ( !textField.val() && !fileField.val()) {
+      alert('メッセージを入力してください');
+    } else {
+      var formData = new FormData($(this)[0]);
+      $.ajax({
+        type: 'POST',
+        url: './messages.json',
+        processData: false,
+        contentType: false,
+        data: formData
+      })
+      .done(function(data) {
+        var html = buildHTML(data);
+        $('#messages').append(html);
+        textField.val("");
+        $form.reset();
+      })
+    };
   });
 
   // setTimeout(function() {
