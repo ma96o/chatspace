@@ -1,11 +1,7 @@
 $(function() {
   function buildHTML(message) {
     var userName = $('#user-name').text();
-    if (!message.image) {
-      var messageImage = ``;
-    } else {
-      var messageImage = `<img src="${message.image}" alt="Plofile fb n">`;
-    };
+    var messageImage = !message.image ? `` : `<img src="${message.image}" alt="Plofile fb n">` ;
     var html = $('<li class="message">').append(
           `<p class="message__name">
              ${userName}
