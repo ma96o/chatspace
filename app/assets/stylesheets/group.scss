@@ -61,7 +61,7 @@
     display: block;
     line-height: 50px;
     font-weight: bold;
-    text-align: right;
+    text-align: center;
   }
 
   &__input {
@@ -77,10 +77,6 @@
     line-height: 50px;
     font-size: 14px;
     border-bottom: 1px solid $gray_border;
-
-    &__name {
-      float: left;
-    }
 
     &__btn {
       float: right;
@@ -98,10 +94,12 @@
   }
 
   &__action-btn {
+    width: 100%;
     display: inline-block;
     padding: 12px 20px;
     color: $white;
     background-color: $vivid-blue;
     border: 0;
+    margin: 10px 0;
   }
 }

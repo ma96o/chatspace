@@ -145,7 +145,6 @@ a {
           width: 50%;
 
           .message {
-            height: 54px;
             width: 100%;
             padding: 10px 0;
             border-bottom: solid 1px $gray_formWrapper;
@@ -193,8 +192,8 @@ a {
           .text {
             height: 50px;
             width: 100%;
-            margin-right: -97px;
-            padding-right: 97px;
+            margin-right: -105px;
+            padding-right: 105px;
             padding-left: 10px;
             box-sizing: border-box;
             float: left;
@@ -203,11 +202,17 @@ a {
             color: $gray_text;
           }
 
+          .image_file {
+            height: 50px;
+            float: left;
+            padding-top: 15px;
+          }
+
           .button {
             height: 50px;
             width: 82px;
-            padding: 0 20px;
-            margin-left: 15px;
+            padding: 0 17px;
+            margin-left: 12px;
             float: right;
             border: none;
             background-color: $vivid-blue;

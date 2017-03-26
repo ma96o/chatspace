@@ -8,7 +8,13 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-      redirect_to group_messages_path, notice: "メッセージを送信しました"
+      respond_to do |format|
+        format.html {
+          redirect_to group_messages_path(@group),
+          notice: "メッセージを送信しました"
+        }
+        format.json
+      end
     else
       flash.now[:alert] = "メッセージの送信に失敗しました"
       render action: :index
@@ -18,7 +24,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:text).merge(user_id: current_user.id, group_id: params[:group_id])
+    params.require(:message).permit(:text, :image).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 
   def set_groups
