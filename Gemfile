@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'carrierwave'
 gem 'devise'
 gem 'erb2haml'
+gem 'fog-aws'
 gem 'haml-rails', '~> 0.9'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
@@ -26,7 +27,7 @@ end
 
 group :development do
   gem 'spring'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 3.0'
 end
 
 group :test do
