@@ -6,6 +6,8 @@ class Message < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+  private
+
   def valid_text_or_image
     unless text || image.model[:image]
       errors.add(:message, "メッセージを入力してください")
