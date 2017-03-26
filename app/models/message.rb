@@ -2,5 +2,16 @@ class Message < ApplicationRecord
   belongs_to :user
   belongs_to :group
 
-  validates_presence_of :text, :user_id, :group_id
+  validate :valid_text_or_image
+
+  mount_uploader :image, ImageUploader
+
+  private
+
+  def valid_text_or_image
+    unless text || image.model[:image]
+      errors.add(:message, "メッセージを入力してください")
+    end
+  end
+
 end
