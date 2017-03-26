@@ -35,11 +35,11 @@ $(function() {
         var html = buildHTML(data);
         $('#messages').append(html);
         textField.val("");
-        return false;
       })
     } else {
       alert('メッセージを入力してください');
     };
+    return false;
   });
 
   // setTimeout(function() {
