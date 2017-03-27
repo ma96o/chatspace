@@ -22,6 +22,7 @@ group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails', '~> 4.4.1'
   gem 'pry-rails'
+  gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5.0'
 end
 
