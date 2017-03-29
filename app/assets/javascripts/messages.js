@@ -1,5 +1,4 @@
 $(function() {
-  var path = location.pathname;
   var messages = $('#messages');
 
   function buildHTML(message) {
@@ -46,7 +45,7 @@ $(function() {
     return false;
   });
 
-
+  var path = location.pathname;
   if (path.match('/messages')) {
     var timer = setInterval(function(){
       $.ajax({
@@ -55,8 +54,9 @@ $(function() {
         dataType: 'json'
       })
       .done(function(data) {
-        var existedMessageIds = messages.children().map(function(i, elm) {
-          return Number(elm.dataset.messageId);
+        var existedMessageIds = [];
+        messages.children().each(function(i, elm) {
+          existedMessageIds.push(Number(elm.dataset.messageId));
         });
         $.each(data, function(i, message) {
           if ($.inArray(message.id, existedMessageIds) === -1) {
