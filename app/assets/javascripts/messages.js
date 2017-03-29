@@ -42,6 +42,7 @@ $(function() {
     } else {
       alert('メッセージを入力してください');
     };
+    $form.reset();
     return false;
   });
 
