@@ -9,7 +9,7 @@ class Message < ApplicationRecord
   private
 
   def valid_text_or_image
-    unless text || image.model[:image]
+    if text == "" && image.file.nil?
       errors.add(:message, "メッセージを入力してください")
     end
   end

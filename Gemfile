@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'carrierwave'
 gem 'devise'
 gem 'erb2haml'
-gem 'fog-aws'
+gem 'fog'
 gem 'haml-rails', '~> 0.9'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
@@ -22,6 +22,7 @@ group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails', '~> 4.4.1'
   gem 'pry-rails'
+  gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5.0'
 end
 
