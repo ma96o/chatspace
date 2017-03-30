@@ -50,4 +50,4 @@ test:
 production:
   <<: *default
   database: chat-space_production
-  password: <%= ENV['CHAT-SPACE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
