@@ -15,11 +15,11 @@ default: &default
   pool: 5
   username: root
   password:
-  socket: /tmp/mysql.sock
 
 development:
   <<: *default
   database: chat-space_development
+  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,6 +27,7 @@ development:
 test:
   <<: *default
   database: chat-space_test
+  socket: /tmp/mysql.sock
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,5 +51,5 @@ test:
 production:
   <<: *default
   database: chat-space_production
-  username: chat-space
-  password: <%= ENV['CHAT-SPACE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
