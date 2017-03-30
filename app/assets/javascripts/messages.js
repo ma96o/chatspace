@@ -1,5 +1,6 @@
 $(function() {
   var messages = $('#messages');
+  var path = location.pathname;
 
   function buildHTML(message) {
     var userName = $('#user-name').text();
@@ -45,24 +46,21 @@ $(function() {
     return false;
   });
 
-  var path = location.pathname;
   if (path.match('/messages')) {
     var timer = setInterval(function(){
+      lastMessageId = messages.children().last().data('messageId');
       $.ajax({
         type:     'GET',
         url:       path,
+        data: {
+          last_message_id: lastMessageId
+        },
         dataType: 'json'
       })
       .done(function(data) {
-        var existedMessageIds = [];
-        messages.children().each(function(i, elm) {
-          existedMessageIds.push(Number(elm.dataset.messageId));
-        });
         $.each(data, function(i, message) {
-          if ($.inArray(message.id, existedMessageIds) === -1) {
-            var html = buildHTML(message);
-            messages.append(html);
-         }
+          var html = buildHTML(message);
+          messages.append(html);
         });
       });
     }, 5000);
