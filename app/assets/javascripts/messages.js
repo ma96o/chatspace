@@ -1,8 +1,11 @@
 $(function() {
+  var messages = $('#messages');
+  var path = location.pathname;
+
   function buildHTML(message) {
     var userName = $('#user-name').text();
     var messageImage = message.image ? `<img src="${message.image}" alt="Plofile fb n">` : `` ;
-    var html = $('<li class="message">').append(
+    var html = $('<li class="message" data-message-id=' + message.id + '>').append(
           `<p class="message__name">
              ${userName}
              <span>
@@ -33,16 +36,38 @@ $(function() {
       })
       .done(function(data) {
         var html = buildHTML(data);
-        $('#messages').append(html);
+        messages.append(html);
         textField.val("");
       })
     } else {
       alert('メッセージを入力してください');
     };
+    $form.reset();
     return false;
   });
 
-  // setTimeout(function() {
-  //   location.reload();
-  // }, 10000);
+  if (path.match('/messages')) {
+    var timer = setInterval(function(){
+      var lastMessageId = messages.children().last().data('messageId');
+      $.ajax({
+        type:     'GET',
+        url:       path,
+        data: {
+          last_message_id: lastMessageId
+        },
+        dataType: 'json'
+      })
+      .done(function(data) {
+        $.each(data, function(i, message) {
+          var html = buildHTML(message);
+          messages.append(html);
+        });
+      });
+    }, 5000);
+  }
+
+  // turbolinksによってページ遷移先にsetIntervalが引き継がれるバグを解消
+  $(this).on('turbolinks:click', function() {
+    clearInterval(timer);
+  });
 });
