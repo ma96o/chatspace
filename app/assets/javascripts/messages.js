@@ -48,7 +48,7 @@ $(function() {
 
   if (path.match('/messages')) {
     var timer = setInterval(function(){
-      lastMessageId = messages.children().last().data('messageId');
+      var lastMessageId = messages.children().last().data('messageId');
       $.ajax({
         type:     'GET',
         url:       path,
