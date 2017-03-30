@@ -20,6 +20,11 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
   gem 'factory_girl_rails', '~> 4.4.1'
   gem 'pry-rails'
   gem 'rails-controller-testing'
