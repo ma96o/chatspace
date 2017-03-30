@@ -1,7 +1,3 @@
-require 'carrierwave/storage/abstract'
-require 'carrierwave/storage/file'
-require 'carrierwave/storage/fog'
-
 CarrierWave.configure do |config|
   case Rails.env
   when 'production', 'development'
